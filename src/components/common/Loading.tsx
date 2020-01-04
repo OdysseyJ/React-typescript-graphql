@@ -1,5 +1,6 @@
 import React from "react";
 import { CircularProgress } from "@material-ui/core";
+import { isTSNonNullExpression } from "@babel/types";
 
 const styles = {
   loading: {
@@ -9,7 +10,7 @@ const styles = {
   }
 };
 
-const InfinityLoadingSpinner = ({ show }) =>
+const InfinityLoadingSpinner = ({ show }: any) =>
   show === true ? (
     <div style={styles.loading}>
       <CircularProgress />

@@ -1,11 +1,11 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState } from "react";
 // import { makeStyles } from "@material-ui/core/styles";
 import GridList from "@material-ui/core/GridList";
 import Loading from "../common/Loading";
 import PokemonRow, { PokemonRowProps } from "./PokemonRow";
 
 import { useQuery } from "@apollo/react-hooks";
-import { GET_POKEMONS } from "../../queries/PokemonQueries";
+import { GET_POKEMONS_FOR_LIST } from "../../queries/PokemonQueries";
 
 // const useStyles = makeStyles(theme => ({
 //   root: {
@@ -23,20 +23,23 @@ import { GET_POKEMONS } from "../../queries/PokemonQueries";
 //     color: "rgba(255, 255, 255, 0.54)"
 //   }
 // }));
+type PokemonListProps = {
+  category: string;
+};
 
-function PokemonList() {
+function PokemonList({ category }: PokemonListProps) {
   //   const classes = useStyles();
   const [count, setCount] = useState<number>(30);
 
-  const { loading, error, data } = useQuery(GET_POKEMONS(count));
+  const { loading, error, data } = useQuery(
+    GET_POKEMONS_FOR_LIST(count, category)
+  );
 
   const handleScroll = () => {
     if (
       window.innerHeight + window.scrollY >= document.body.offsetHeight - 300 &&
       loading
     ) {
-      console.log("TEST");
-      console.log(count);
       setCount(count + 10);
     }
   };

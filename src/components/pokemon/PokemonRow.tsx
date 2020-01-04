@@ -1,5 +1,6 @@
 import React from "react";
 import { GridListTile, GridListTileBar } from "@material-ui/core";
+import { Link } from "react-router-dom";
 
 const styles = {
   gridTile: {
@@ -23,17 +24,21 @@ export type PokemonRowProps = {
 
 function PokemonRow({ id, number, name, image, types }: PokemonRowProps) {
   return (
-    <GridListTile key={id} style={styles.gridTile}>
-      <img
-        style={styles.pokemonImage}
-        src={image}
-        alt={`${number} - ${name}`}
-      />
-      <GridListTileBar
-        title={`${number} - ${name}`}
-        subtitle={types.join(", ")}
-      />
-    </GridListTile>
+    <div>
+      <Link to={`${name}`}>
+        <GridListTile key={id} style={styles.gridTile}>
+          <img
+            style={styles.pokemonImage}
+            src={image}
+            alt={`${number} - ${name}`}
+          />
+          <GridListTileBar
+            title={`${number} - ${name}`}
+            subtitle={types.join(", ")}
+          />
+        </GridListTile>
+      </Link>
+    </div>
   );
 }
 
