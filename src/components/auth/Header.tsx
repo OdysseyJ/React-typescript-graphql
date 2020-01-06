@@ -58,12 +58,6 @@ const Spacer = styled.div`
   flex-grow: 1;
 `;
 
-// 하단 그래디언트 테두리
-const GradientBorder = styled.div`
-  height: 3px;
-  background: linear-gradient(to right, ${oc.orange[3]}, ${oc.yellow[5]});
-`;
-
 const Header = ({ children }: any) => {
   return (
     <Positioner>

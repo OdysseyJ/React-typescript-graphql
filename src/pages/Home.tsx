@@ -1,18 +1,22 @@
-import React, { useState, useCallback } from "react";
-import PokemonList from "../components/pokemon/PokemonList";
-import Categories from "../components/pokemon/Categories";
-import Header from "../components/header/Header";
-import Footer from "../components/footer/Footer";
+import React from "react";
+import Footer from "../components/layout/Footer";
+import Dashboard from "../components/layout/Dashboard";
+import Header from "../components/auth/Header";
+import { createStyles, makeStyles, Theme } from "@material-ui/core";
+
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      display: "flex"
+    }
+  })
+);
 
 const Home = () => {
-  // const [category, setCategory] = useState<string>("all");
-  // const onSelect = useCallback(category => setCategory(category), []);
-
+  const classes = useStyles();
   return (
-    <div>
-      <Header></Header>
-      {/* <Categories category={category} onSelect={onSelect}></Categories>
-      <PokemonList category={category} /> */}
+    <div className={classes.root}>
+      <Dashboard></Dashboard>
       <Footer></Footer>
     </div>
   );

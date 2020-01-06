@@ -1,6 +1,5 @@
 import React from "react";
 import { CircularProgress } from "@material-ui/core";
-import { isTSNonNullExpression } from "@babel/types";
 
 const styles = {
   loading: {

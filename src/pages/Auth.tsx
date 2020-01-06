@@ -1,7 +1,9 @@
 import React from "react";
+import Signininside from "../components/auth/AuthForm";
+import Header from "../components/auth/Header";
 
 const Auth = () => {
-  return <div>auth</div>;
+  return <Signininside></Signininside>;
 };
 
 export default Auth;
