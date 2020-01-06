@@ -28,15 +28,19 @@ const posts = [
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    root: {
-      width: "100%",
-      maxWidth: 360,
-      backgroundColor: theme.palette.background.paper
+    paper: {
+      alignItems: "center",
+      justifyContent: "center",
+      width: 300,
+      margin: theme.spacing(3)
+    },
+    list: {
+      padding: 0
     },
     noticeheader: {
       backgroundColor: oc.gray[2]
     },
-    font: {
+    listfont: {
       fontSize: 8
     }
   })
@@ -50,38 +54,36 @@ export default function SimpleList() {
   const classes = useStyles();
 
   return (
-    <Grid item component={Paper} elevation={6} square>
-      <div className={classes.root}>
-        <List component="nav">
-          <ListSubheader className={classes.noticeheader}>
-            <Grid container>
-              <Grid item xs={10}>
-                공지사항
-              </Grid>
-              <Grid item xs={2}>
-                <Button>더보기</Button>
-              </Grid>
+    <Paper className={classes.paper}>
+      <List component="nav" className={classes.list}>
+        <ListSubheader className={classes.noticeheader}>
+          <Grid container>
+            <Grid item xs={10}>
+              공지사항
             </Grid>
-          </ListSubheader>
-          <Divider></Divider>
-          <ListItem>
-            <Grid container>
-              <Grid item xs={2}>
-                <ListItemText>#</ListItemText>
-              </Grid>
-              <Grid item xs={3}>
-                <ListItemText>제목</ListItemText>
-              </Grid>
+            <Grid item xs={2}>
+              <Button>더보기</Button>
             </Grid>
-          </ListItem>
-          {posts.map((post, index) => (
-            <div>
-              <Divider></Divider>
-              <NoticeRow primary={post} index={index}></NoticeRow>
-            </div>
-          ))}
-        </List>
-      </div>
-    </Grid>
+          </Grid>
+        </ListSubheader>
+        <Divider></Divider>
+        <ListItem>
+          <Grid container>
+            <Grid item xs={2}>
+              <ListItemText>#</ListItemText>
+            </Grid>
+            <Grid item xs={3}>
+              <ListItemText>제목</ListItemText>
+            </Grid>
+          </Grid>
+        </ListItem>
+        {posts.map((post, index) => (
+          <div>
+            <Divider></Divider>
+            <NoticeRow primary={post} index={index}></NoticeRow>
+          </div>
+        ))}
+      </List>
+    </Paper>
   );
 }

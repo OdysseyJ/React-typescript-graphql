@@ -1,26 +1,28 @@
 import React from "react";
+import CssBaseline from "@material-ui/core/CssBaseline";
 import { createStyles, Theme, makeStyles } from "@material-ui/core/styles";
-import NoticeList from "../home/notice/NoticeList";
-import { Grid } from "@material-ui/core";
-
-const drawerWidth = 240;
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    root: {
+    content: {
       display: "flex",
-      paddingTop: 100,
-      padding: 10
+      width: "100%",
+      flexDirection: "column",
+      minHeight: "100vh"
+    },
+    main: {
+      marginTop: theme.spacing(8),
+      marginBottom: theme.spacing(2)
     }
   })
 );
 
-export default function PermanentDrawerLeft() {
+export default function Content() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      <NoticeList></NoticeList>
+    <div className={classes.content}>
+      <CssBaseline />
     </div>
   );
 }

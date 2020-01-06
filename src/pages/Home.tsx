@@ -1,13 +1,21 @@
 import React from "react";
-import Footer from "../components/layout/Footer";
 import Dashboard from "../components/layout/Dashboard";
-import Header from "../components/auth/Header";
+import Content from "../components/home/Content";
 import { createStyles, makeStyles, Theme } from "@material-ui/core";
+import Footer from "../components/layout/Footer";
+import Sidebar from "../components/layout/Sidebar";
+import NoticeList from "../components/sidebar/notice/NoticeList";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    root: {
+    rootHome: {
       display: "flex"
+    },
+    sidebar: {
+      width: 500,
+      display: "flex",
+      flexDirection: "column",
+      minHeight: "100vh"
     }
   })
 );
@@ -15,8 +23,12 @@ const useStyles = makeStyles((theme: Theme) =>
 const Home = () => {
   const classes = useStyles();
   return (
-    <div className={classes.root}>
-      <Dashboard></Dashboard>
+    <div>
+      <div className={classes.rootHome}>
+        <Dashboard></Dashboard>
+        <Content></Content>
+        <Sidebar></Sidebar>
+      </div>
       <Footer></Footer>
     </div>
   );

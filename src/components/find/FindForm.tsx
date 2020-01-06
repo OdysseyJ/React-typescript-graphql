@@ -17,20 +17,16 @@ const useStyles = makeStyles((theme?: any) =>
   createStyles({
     root: {
       flexGrow: 1,
-      marginTop: theme.spacing(20)
-    },
-    image: {
-      backgroundImage: "url(https://source.unsplash.com/random)",
-      backgroundRepeat: "no-repeat",
-      backgroundColor:
-        theme.palette.type === "dark"
-          ? theme.palette.grey[900]
-          : theme.palette.grey[50],
-      backgroundSize: "cover",
-      backgroundPosition: "center"
+      marginTop: theme.spacing(10)
     },
     paper: {
-      margin: theme.spacing(8, 4),
+      alignItems: "center",
+      justifyContent: "center"
+    },
+    paperForm: {
+      width: 350,
+      height: 400,
+      margin: theme.spacing(5),
       display: "flex",
       flexDirection: "column",
       alignItems: "center"
@@ -45,6 +41,11 @@ const useStyles = makeStyles((theme?: any) =>
     },
     submit: {
       margin: theme.spacing(3, 0, 2)
+    },
+    "@media (max-width: 500px)": {
+      paperForm: {
+        width: "auto"
+      }
     }
   })
 );
@@ -61,8 +62,8 @@ export default function SignInSide() {
       className={classes.root}
     >
       <CssBaseline />
-      <Grid item xs={3} component={Paper} elevation={6} square>
-        <div className={classes.paper}>
+      <Paper>
+        <div className={classes.paperForm}>
           <Avatar className={classes.avatar}>
             <LockOutlinedIcon />
           </Avatar>
@@ -102,7 +103,7 @@ export default function SignInSide() {
             </Box>
           </form>
         </div>
-      </Grid>
+      </Paper>
     </Grid>
   );
 }

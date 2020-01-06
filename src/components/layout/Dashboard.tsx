@@ -29,8 +29,8 @@ const useStyles = makeStyles((theme: Theme) =>
     drawerPaper: {
       width: drawerWidth
     },
-    SellingImage: {
-      height: 200,
+    adImage: {
+      height: 300,
       padding: 5
     },
     toolbar: theme.mixins.toolbar,
@@ -56,12 +56,11 @@ export default function PermanentDrawerLeft() {
       <div className={classes.fixedSize}></div>
       <Divider />
       <List>
-        {[
-          "-------유저사진-------",
-          "유저 이름 : 테스트유저",
-          "깃털개수 : 10개"
-        ].map((text, index) => (
+        {["유저닉네임1", "10"].map((text, index) => (
           <ListItem button key={text}>
+            <ListItemIcon>
+              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+            </ListItemIcon>
             <ListItemText primary={text} />
           </ListItem>
         ))}
@@ -94,8 +93,8 @@ export default function PermanentDrawerLeft() {
         ))}
       </List>
       <img
-        className={classes.SellingImage}
-        src={process.env.PUBLIC_URL + "/images/Gwanggo.png"}
+        className={classes.adImage}
+        src={process.env.PUBLIC_URL + "/images/ad_Drawer.png"}
       ></img>
     </Drawer>
   );

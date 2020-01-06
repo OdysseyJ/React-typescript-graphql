@@ -7,7 +7,7 @@ import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
-import { makeStyles, createStyles } from "@material-ui/core/styles";
+import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import oc from "open-color";
 import Copyright from "../common/Copyright";
 
@@ -109,15 +109,16 @@ export default function AuthForm() {
             color="primary"
             className={classes.submit}
           >
-            Sign In
+            로그인
           </Button>
           <Grid container>
-            <Grid item xs>
+            <Grid item xs={6}>
               <Link href="auth/find" variant="body2">
                 로그인 정보를 잊으셨나요?
               </Link>
             </Grid>
-            <Grid item>
+            <Grid item xs={4}></Grid>
+            <Grid item xs={2}>
               <Link href="auth/join" variant="body2">
                 {"회원가입"}
               </Link>
