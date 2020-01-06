@@ -4,11 +4,18 @@ import { ApolloProvider } from "@apollo/react-hooks";
 import Root from "./routes";
 import Header from "./components/layout/Header";
 
+//for test
+import CityList from "./mobx/city";
+import StoreProvider from "./mobx/context";
+import Search from "./mobx/search";
+
 const App = () => {
   return (
     <ApolloProvider client={client}>
-      <Header></Header>
-      <Root />
+      <StoreProvider>
+        <Header></Header>
+        <Root />
+      </StoreProvider>
     </ApolloProvider>
   );
 };

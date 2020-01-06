@@ -1,10 +1,6 @@
 import React from "react";
-import Dashboard from "../components/layout/Dashboard";
-import Content from "../components/home/Content";
+import { Dashboard, Footer, Sidebar, Content } from "../components/layout";
 import { createStyles, makeStyles, Theme } from "@material-ui/core";
-import Footer from "../components/layout/Footer";
-import Sidebar from "../components/layout/Sidebar";
-import NoticeList from "../components/sidebar/notice/NoticeList";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({

@@ -11,7 +11,7 @@ const Root = () => {
         <Route path="/auth/join" exact component={Join}></Route>
         <Route path="/auth/find" exact component={Find}></Route>
         <Route path="/detail" exact component={Detail}></Route>
-        <Redirect path="*" to="/auth" />
+        {/* <Redirect path="*" to="/auth" /> */}
       </Switch>
     </BrowserRouter>
   );
