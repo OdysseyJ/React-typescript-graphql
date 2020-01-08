@@ -5,15 +5,17 @@ import ContentRouter from "../../routes/ContentRouter";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    content: {
+    contentin: {
+      alignItems: "center",
       display: "flex",
-      width: "100%",
+      width: 850,
       flexDirection: "column",
-      minHeight: "100vh"
+      paddingTop: 70
     },
-    main: {
-      marginTop: theme.spacing(8),
-      marginBottom: theme.spacing(2)
+    "@media (max-width: 700px)": {
+      contentin: {
+        width: 400
+      }
     }
   })
 );
@@ -22,7 +24,7 @@ export default function Content() {
   const classes = useStyles();
 
   return (
-    <div className={classes.content}>
+    <div className={classes.contentin}>
       <CssBaseline />
       <ContentRouter></ContentRouter>
     </div>

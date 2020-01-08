@@ -11,7 +11,20 @@ import InboxIcon from "@material-ui/icons/Inbox";
 
 const useStyles = makeStyles({
   text: {
+    fontSize: 12,
+    textOverflow: "ellipsis",
+    whiteSpace: "nowrap",
+    overflow: "hidden"
+  },
+  listindex: {
+    color: "gray",
     fontSize: 12
+  },
+  listitem: {
+    height: 40
+  },
+  grid: {
+    margin: "auto"
   }
 });
 
@@ -24,13 +37,13 @@ export default function NoticeRow({ primary, index }: NoticeRowProps) {
   const classes = useStyles();
 
   return (
-    <ListItem button>
+    <ListItem button className={classes.listitem}>
       <Grid container>
         <Grid item xs={2}>
-          <ListItemText>{index}</ListItemText>
+          <div className={classes.listindex}>{index}</div>
         </Grid>
-        <Grid item xs={10}>
-          <ListItemText classes={{ primary: classes.text }} primary={primary} />
+        <Grid item xs={10} className={classes.grid}>
+          <div className={classes.text}>{primary}</div>
         </Grid>
       </Grid>
     </ListItem>

@@ -8,7 +8,8 @@ import {
   Paper,
   ListSubheader,
   Button,
-  ListItemText
+  ListItemText,
+  Link
 } from "@material-ui/core";
 import NoticeRow from "./NoticeRow";
 import oc from "open-color";
@@ -31,17 +32,35 @@ const useStyles = makeStyles((theme: Theme) =>
     paper: {
       alignItems: "center",
       justifyContent: "center",
-      width: 300,
-      margin: theme.spacing(3)
-    },
-    list: {
-      padding: 0
+      width: "88%",
+      margin: theme.spacing(2),
+      marginBottom: theme.spacing(0),
+      marginLeft: theme.spacing(0)
     },
     noticeheader: {
       backgroundColor: oc.gray[2]
     },
+    textcolor: {
+      color: "black"
+    },
+    linktextcolor: {
+      color: "gray"
+    },
+    list: {
+      padding: 0
+    },
     listfont: {
       fontSize: 8
+    },
+    titleListItem: {
+      height: 40
+    },
+    titleFont: {
+      color: "gray",
+      fontSize: 12
+    },
+    grid: {
+      margin: "auto"
     }
   })
 );
@@ -54,26 +73,28 @@ export default function SimpleList() {
   const classes = useStyles();
 
   return (
-    <Paper className={classes.paper}>
+    <Paper elevation={3} className={classes.paper}>
       <List component="nav" className={classes.list}>
         <ListSubheader className={classes.noticeheader}>
           <Grid container>
-            <Grid item xs={10}>
+            <Grid item xs={10} className={classes.textcolor}>
               공지사항
             </Grid>
             <Grid item xs={2}>
-              <Button>더보기</Button>
+              <Link className={classes.linktextcolor} href={`/home/notice`}>
+                더보기>
+              </Link>
             </Grid>
           </Grid>
         </ListSubheader>
         <Divider></Divider>
-        <ListItem>
-          <Grid container>
+        <ListItem className={classes.titleListItem}>
+          <Grid container className={classes.grid}>
             <Grid item xs={2}>
-              <ListItemText>#</ListItemText>
+              <div className={classes.titleFont}>#</div>
             </Grid>
             <Grid item xs={3}>
-              <ListItemText>제목</ListItemText>
+              <div className={classes.titleFont}>제목</div>
             </Grid>
           </Grid>
         </ListItem>
