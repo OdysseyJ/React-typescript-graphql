@@ -1,14 +1,6 @@
 import React from "react";
 import { createStyles, Theme, makeStyles } from "@material-ui/core/styles";
-import {
-  Paper,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  Divider
-} from "@material-ui/core";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
+import { Paper, List, Divider } from "@material-ui/core";
 import BoardTitle from "./BoardTitle";
 import BoardContent, { BoardContentProps } from "./BoardContent";
 
@@ -56,22 +48,24 @@ const contents: BoardContentProps[] = [
   { title: "새터 오티 질문입니다!", time: "3시간전" }
 ];
 
-export default function Board() {
+type BoardProps = {
+  boardName: string;
+  path: string;
+  children?: any;
+};
+
+export default function Board({ boardName, path, children }: BoardProps) {
   const classes = useStyles();
 
   return (
     <Paper elevation={3} className={classes.paper}>
       <div className={classes.content}>
         <List className={classes.list}>
-          <ListItem button>
-            <ListItemIcon>
-              <InboxIcon />
-            </ListItemIcon>
-            <BoardTitle title="유머/화제게시판"></BoardTitle>
-          </ListItem>
+          <BoardTitle title={boardName} path={path}>
+            {children}
+          </BoardTitle>
           <Divider></Divider>
           {contents.map(content => {
-            console.log(content);
             return (
               <BoardContent
                 title={content.title}

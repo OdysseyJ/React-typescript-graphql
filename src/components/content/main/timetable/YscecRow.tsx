@@ -6,7 +6,8 @@ import {
   createStyles,
   Theme,
   Grid,
-  Button
+  Button,
+  Link
 } from "@material-ui/core";
 import oc from "open-color";
 
@@ -62,20 +63,26 @@ export type YscecRowPropsDetail = {
 };
 
 export type YscecRowProps = {
+  id: number;
   className: string;
   details: YscecRowPropsDetail[];
 };
 
-const YscecRow = ({ className, details }: YscecRowProps) => {
+const YscecRow = ({ id, className, details }: YscecRowProps) => {
   const classes = useStyles();
   return (
     <ListItem className={classes.listItem}>
       <ListItemText>
         <Grid container>
           <Grid xs={4} item className={classes.grid}>
-            <Button className={classes.classNameButton}>
-              <div className={classes.classNameButtonFont}>{className}</div>
-            </Button>
+            <Link
+              href={`home/subject/${id}`}
+              style={{ textDecoration: "none" }}
+            >
+              <Button className={classes.classNameButton}>
+                <div className={classes.classNameButtonFont}>{className}</div>
+              </Button>
+            </Link>
           </Grid>
           <Grid xs={6} item className={classes.grid}>
             <div className={classes.titleFont}>{details[0].contentTitle}</div>

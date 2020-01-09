@@ -5,17 +5,18 @@ import {
   withStyles,
   createStyles,
   List,
-  ListSubheader,
   Grid,
-  Link,
   Divider,
-  ListItem
+  ListItem,
+  Button,
+  Link
 } from "@material-ui/core";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import oc from "open-color";
+import NoticeBoardRow, { NoticeBoardRowProps } from "./NoticeBoardRow";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -115,6 +116,10 @@ const useStyles = makeStyles((theme: Theme) => ({
   grid: {
     margin: "auto"
   },
+  backButton: {
+    color: "gray",
+    fontSize: 12
+  },
   "@media (max-width: 1100px)": {
     root: {
       width: 350,
@@ -122,6 +127,274 @@ const useStyles = makeStyles((theme: Theme) => ({
     }
   }
 }));
+const DeveloperBoardInfo: NoticeBoardRowProps[] = [
+  {
+    index: 1,
+    title: "2020.1.5 업데이트사항",
+    date: "2019.12.21",
+    time: 1290
+  },
+  {
+    index: 1,
+    title: "2020.1.5 업데이트사항",
+    date: "2019.12.21",
+    time: 1290
+  },
+  {
+    index: 1,
+    title: "2020.1.5 업데이트사항",
+    date: "2019.12.21",
+    time: 1290
+  },
+  {
+    index: 1,
+    title: "2020.1.5 업데이트사항",
+    date: "2019.12.21",
+    time: 1290
+  },
+  {
+    index: 1,
+    title: "2020.1.5 업데이트사항",
+    date: "2019.12.21",
+    time: 1290
+  },
+  {
+    index: 1,
+    title: "2020.1.5 업데이트사항",
+    date: "2019.12.21",
+    time: 1290
+  },
+  {
+    index: 1,
+    title: "2020.1.5 업데이트사항",
+    date: "2019.12.21",
+    time: 1290
+  },
+  {
+    index: 1,
+    title: "2020.1.5 업데이트사항",
+    date: "2019.12.21",
+    time: 1290
+  },
+  {
+    index: 1,
+    title: "2020.1.5 업데이트사항",
+    date: "2019.12.21",
+    time: 1290
+  },
+  {
+    index: 1,
+    title: "2020.1.5 업데이트사항",
+    date: "2019.12.21",
+    time: 1290
+  },
+  {
+    index: 1,
+    title: "2020.1.5 업데이트사항",
+    date: "2019.12.21",
+    time: 1290
+  }
+];
+const NoticeBoardInfo: NoticeBoardRowProps[] = [
+  {
+    index: 1,
+    title: "연세대 고등교육혁신원에서 알려드립니다.",
+    date: "2019.12.21",
+    time: 1290
+  },
+  {
+    index: 1,
+    title: "연세대 고등교육혁신원에서 알려드립니다.",
+    date: "2019.12.21",
+    time: 1290
+  },
+  {
+    index: 1,
+    title: "연세대 고등교육혁신원에서 알려드립니다.",
+    date: "2019.12.21",
+    time: 1290
+  },
+  {
+    index: 1,
+    title: "연세대 고등교육혁신원에서 알려드립니다.",
+    date: "2019.12.21",
+    time: 1290
+  },
+  {
+    index: 1,
+    title: "연세대 고등교육혁신원에서 알려드립니다.",
+    date: "2019.12.21",
+    time: 1290
+  },
+  {
+    index: 1,
+    title: "연세대 고등교육혁신원에서 알려드립니다.",
+    date: "2019.12.21",
+    time: 1290
+  },
+  {
+    index: 1,
+    title: "연세대 고등교육혁신원에서 알려드립니다.",
+    date: "2019.12.21",
+    time: 1290
+  },
+  {
+    index: 1,
+    title: "연세대 고등교육혁신원에서 알려드립니다.",
+    date: "2019.12.21",
+    time: 1290
+  },
+  {
+    index: 1,
+    title: "연세대 고등교육혁신원에서 알려드립니다.",
+    date: "2019.12.21",
+    time: 1290
+  },
+  {
+    index: 1,
+    title: "연세대 고등교육혁신원에서 알려드립니다.",
+    date: "2019.12.21",
+    time: 1290
+  },
+  {
+    index: 1,
+    title: "연세대 고등교육혁신원에서 알려드립니다.",
+    date: "2019.12.21",
+    time: 1290
+  },
+  {
+    index: 1,
+    title: "연세대 고등교육혁신원에서 알려드립니다.",
+    date: "2019.12.21",
+    time: 1290
+  },
+  {
+    index: 1,
+    title: "연세대 고등교육혁신원에서 알려드립니다.",
+    date: "2019.12.21",
+    time: 1290
+  },
+  {
+    index: 1,
+    title: "연세대 고등교육혁신원에서 알려드립니다.",
+    date: "2019.12.21",
+    time: 1290
+  },
+  {
+    index: 1,
+    title: "연세대 고등교육혁신원에서 알려드립니다.",
+    date: "2019.12.21",
+    time: 1290
+  },
+  {
+    index: 1,
+    title: "연세대 고등교육혁신원에서 알려드립니다.",
+    date: "2019.12.21",
+    time: 1290
+  },
+  {
+    index: 1,
+    title: "연세대 고등교육혁신원에서 알려드립니다.",
+    date: "2019.12.21",
+    time: 1290
+  },
+  {
+    index: 1,
+    title: "연세대 고등교육혁신원에서 알려드립니다.",
+    date: "2019.12.21",
+    time: 1290
+  },
+  {
+    index: 1,
+    title: "연세대 고등교육혁신원에서 알려드립니다.",
+    date: "2019.12.21",
+    time: 1290
+  },
+  {
+    index: 1,
+    title: "연세대 고등교육혁신원에서 알려드립니다.",
+    date: "2019.12.21",
+    time: 1290
+  },
+  {
+    index: 1,
+    title: "연세대 고등교육혁신원에서 알려드립니다.",
+    date: "2019.12.21",
+    time: 1290
+  },
+  {
+    index: 1,
+    title: "연세대 고등교육혁신원에서 알려드립니다.",
+    date: "2019.12.21",
+    time: 1290
+  },
+  {
+    index: 1,
+    title: "연세대 고등교육혁신원에서 알려드립니다.",
+    date: "2019.12.21",
+    time: 1290
+  },
+  {
+    index: 1,
+    title: "연세대 고등교육혁신원에서 알려드립니다.",
+    date: "2019.12.21",
+    time: 1290
+  },
+  {
+    index: 1,
+    title: "연세대 고등교육혁신원에서 알려드립니다.",
+    date: "2019.12.21",
+    time: 1290
+  },
+  {
+    index: 1,
+    title: "연세대 고등교육혁신원에서 알려드립니다.",
+    date: "2019.12.21",
+    time: 1290
+  },
+  {
+    index: 1,
+    title: "연세대 고등교육혁신원에서 알려드립니다.",
+    date: "2019.12.21",
+    time: 1290
+  },
+  {
+    index: 1,
+    title: "연세대 고등교육혁신원에서 알려드립니다.",
+    date: "2019.12.21",
+    time: 1290
+  },
+  {
+    index: 1,
+    title: "연세대 고등교육혁신원에서 알려드립니다.",
+    date: "2019.12.21",
+    time: 1290
+  },
+  {
+    index: 1,
+    title: "연세대 고등교육혁신원에서 알려드립니다.",
+    date: "2019.12.21",
+    time: 1290
+  },
+  {
+    index: 1,
+    title: "연세대 고등교육혁신원에서 알려드립니다.",
+    date: "2019.12.21",
+    time: 1290
+  },
+  {
+    index: 1,
+    title: "연세대 고등교육혁신원에서 알려드립니다.",
+    date: "2019.12.21",
+    time: 1290
+  },
+  {
+    index: 1,
+    title: "연세대 고등교육혁신원에서 알려드립니다.",
+    date: "2019.12.21",
+    time: 1290
+  }
+];
 
 export default function NoticeBoard() {
   const classes = useStyles();
@@ -133,6 +406,9 @@ export default function NoticeBoard() {
 
   return (
     <Paper elevation={3} className={classes.root}>
+      <Link href="/home" style={{ textDecoration: "none" }}>
+        <Button className={classes.backButton}>{"< 홈으로"}</Button>
+      </Link>
       <StyledTabs
         value={value}
         onChange={handleChange}
@@ -161,10 +437,55 @@ export default function NoticeBoard() {
             </Grid>
           </ListItem>
           <Divider></Divider>
+          {NoticeBoardInfo.map((info: NoticeBoardRowProps) => {
+            return (
+              <div>
+                <NoticeBoardRow
+                  index={info.index}
+                  title={info.title}
+                  date={info.date}
+                  time={info.time}
+                ></NoticeBoardRow>
+                <Divider></Divider>
+              </div>
+            );
+          })}
         </List>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Item Two
+        <Divider></Divider>
+        <List component="nav" className={classes.list}>
+          <ListItem className={classes.titleListItem}>
+            <Grid container className={classes.grid}>
+              <Grid item xs={1}>
+                <div className={classes.titleLeft}>#</div>
+              </Grid>
+              <Grid item xs={7}>
+                <div className={classes.titleLeft}>제목</div>
+              </Grid>
+              <Grid item xs={2}>
+                <div className={classes.titleRight}>작성일</div>
+              </Grid>
+              <Grid item xs={2}>
+                <div className={classes.titleRight}>조회수</div>
+              </Grid>
+            </Grid>
+          </ListItem>
+          <Divider></Divider>
+          {DeveloperBoardInfo.map((info: NoticeBoardRowProps) => {
+            return (
+              <div>
+                <NoticeBoardRow
+                  index={info.index}
+                  title={info.title}
+                  date={info.date}
+                  time={info.time}
+                ></NoticeBoardRow>
+                <Divider></Divider>
+              </div>
+            );
+          })}
+        </List>
       </TabPanel>
     </Paper>
   );

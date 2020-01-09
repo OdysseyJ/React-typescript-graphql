@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  makeStyles,
-  Theme,
-  Grid
-} from "@material-ui/core";
-import InboxIcon from "@material-ui/icons/Inbox";
+import { ListItem, makeStyles, Grid } from "@material-ui/core";
 
 const useStyles = makeStyles({
   text: {

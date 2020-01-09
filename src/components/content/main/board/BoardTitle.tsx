@@ -4,13 +4,15 @@ import {
   ListItemText,
   makeStyles,
   createStyles,
-  Theme
+  Theme,
+  Link
 } from "@material-ui/core";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import React from "react";
 
 type BoardTitleProps = {
   title: string;
+  path: string;
 };
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -22,20 +24,30 @@ const useStyles = makeStyles((theme: Theme) =>
     endtext: {
       fontSize: 12,
       color: "gray"
+    },
+    button: {
+      color: "black"
     }
   })
 );
 
-const BoardTitle = ({ title }: BoardTitleProps) => {
+const BoardTitle = ({ title, path, children }: any) => {
   const classes = useStyles();
 
   return (
-    <>
-      <ListItemText>
-        <div className={classes.title}>{title}</div>
-      </ListItemText>
-      <div className={classes.endtext}>더보기 ></div>
-    </>
+    <Link
+      href={`home/board/${path}`}
+      style={{ textDecoration: "none" }}
+      color="inherit"
+    >
+      <ListItem button className={classes.button}>
+        <ListItemIcon>{children}</ListItemIcon>
+        <ListItemText>
+          <div className={classes.title}>{title}</div>
+        </ListItemText>
+        <div className={classes.endtext}>더보기 ></div>
+      </ListItem>
+    </Link>
   );
 };
 

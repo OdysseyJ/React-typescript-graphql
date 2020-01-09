@@ -135,22 +135,27 @@ const YscecInfoDetail: YscecRowPropsDetail[][] = [
 
 const YscecInfo: YscecRowProps[] = [
   {
+    id: 11111,
     className: "콘텐츠라이팅",
     details: YscecInfoDetail[0]
   },
   {
+    id: 11112,
     className: "대중음악의이해",
     details: YscecInfoDetail[1]
   },
   {
+    id: 11113,
     className: "알고리즘분석",
     details: YscecInfoDetail[2]
   },
   {
+    id: 11114,
     className: "선형대수와그응용",
     details: YscecInfoDetail[3]
   },
   {
+    id: 11115,
     className: "공학회계",
     details: YscecInfoDetail[4]
   }
@@ -236,6 +241,7 @@ export default function TimeTable() {
                 return (
                   <div>
                     <YscecRow
+                      id={info.id}
                       className={info.className}
                       details={info.details}
                     ></YscecRow>
