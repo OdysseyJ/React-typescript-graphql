@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-export default function Today() {
+const Today = () => {
   const classes = useStyles();
   const number = 3355;
 
@@ -39,7 +39,7 @@ export default function Today() {
       <List>
         <ListItem>
           <ListItemAvatar>
-            <Avatar>{/* <ImageIcon /> */}</Avatar>
+            <Avatar></Avatar>
           </ListItemAvatar>
           <div className={classes.div}>오늘 방문자 수:</div>
           <div className={classes.colordiv}>{number}</div>
@@ -48,4 +48,6 @@ export default function Today() {
       </List>
     </Paper>
   );
-}
+};
+
+export default Today;

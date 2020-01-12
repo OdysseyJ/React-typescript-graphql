@@ -7,8 +7,12 @@ import InboxIcon from "@material-ui/icons/MoveToInbox";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
+    mainContainer: {
+      justifyContent: "center"
+    },
     grid: {
-      width: "flex"
+      display: "flex",
+      justifyContent: "space-between"
     }
   })
 );
@@ -16,16 +20,18 @@ const useStyles = makeStyles((theme: Theme) =>
 const MainContent = () => {
   const classes = useStyles();
   return (
-    <div>
+    <div className={classes.mainContainer}>
+      <Today></Today>
+      <TimeTable></TimeTable>
       <Grid container className={classes.grid}>
-        <Today></Today>
-        <TimeTable></TimeTable>
         <Board boardName="독수리익명게시판" path="noname">
           <InboxIcon></InboxIcon>
         </Board>
         <Board boardName="새내기게시판" path="freshman">
           <InboxIcon></InboxIcon>
         </Board>
+      </Grid>
+      <Grid container className={classes.grid}>
         <Board boardName="취업/진로게시판" path="job">
           <InboxIcon></InboxIcon>
         </Board>

@@ -2,21 +2,26 @@ import React from "react";
 import { createStyles, Theme, makeStyles } from "@material-ui/core/styles";
 import { Paper, List, Divider } from "@material-ui/core";
 import BoardTitle from "./BoardTitle";
-import BoardContent, { BoardContentProps } from "./BoardContent";
+import BoardContent from "./BoardContent";
+import { contents } from "../../../common/DataCenter";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     paper: {
       alignItems: "center",
       justifyContent: "center",
-      width: 400,
+      width: 410,
+      marginTop: theme.spacing(1),
+      marginBottom: theme.spacing(1),
+      [theme.breakpoints.down("sm")]: {
+        width: "100%"
+      }
+    },
+    content: {
       margin: theme.spacing(2)
     },
     list: {
       padding: 0
-    },
-    content: {
-      margin: theme.spacing(2)
     },
     title: {
       fontSize: 20
@@ -32,21 +37,9 @@ const useStyles = makeStyles((theme: Theme) =>
       marginBottom: theme.spacing(1),
       fontSize: 10,
       color: "gray"
-    },
-    "@media (max-width: 1100px)": {
-      paper: {
-        width: 350
-      }
     }
   })
 );
-
-const contents: BoardContentProps[] = [
-  { title: "프문예 다들 공부하시나요?", time: "1시간전" },
-  { title: "토플 유효기간", time: "1시간전" },
-  { title: "아이패드 관련해서여...", time: "2시간전" },
-  { title: "새터 오티 질문입니다!", time: "3시간전" }
-];
 
 type BoardProps = {
   boardName: string;

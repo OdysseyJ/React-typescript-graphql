@@ -2,6 +2,13 @@ import { ScrollBoardRowProps } from "./../content/scrollboard/ScrollBoardRow";
 import { ReviewBoardRowProps } from "../content/yscec/ReviewBoardRow";
 import { YscecBoardRowProps } from "../content/yscec/YscecBoardRow";
 import { NoticeBoardRowProps } from "../content/notice/NoticeBoardRow";
+import { ClassRowProps } from "../content/main/timetable/ClassRow";
+import {
+  YscecRowPropsDetail,
+  YscecRowProps
+} from "../content/main/timetable/YscecRow";
+import { BoardContentProps } from "../content/main/board/BoardContent";
+
 
 export const noticeBoardDetailData = `연플 Ver 1.1 업데이트가 완료되었습니다. 구글 플레이 또는 앱 스토어에서 최신버전으로 업데이트 해주세요!
 
@@ -455,3 +462,99 @@ export const NoticeBoardInfo: NoticeBoardRowProps[] = [
     time: 1290
   }
 ];
+
+export const classInfo: ClassRowProps[] = [
+  { className: "콘텐츠라이팅", professorName: "김형수" },
+  { className: "대중음악의이해", professorName: "박애경,권형석" },
+  { className: "알고리즘분석", professorName: "안형찬" },
+  { className: "선형대수와그응용", professorName: "안수형" },
+  { className: "공학화계", professorName: "윤나영" }
+];
+
+export const YscecInfoDetail: YscecRowPropsDetail[][] = [
+  [
+    {
+      contentTitle: "최종출결 및 ACA자격증 제안",
+      time: "12월 11일"
+    },
+    {
+      contentTitle: "제출 서류 관련 공지",
+      time: "12월 07일"
+    }
+  ],
+  [
+    {
+      contentTitle: "최종출결 및 ACA자격증 제안",
+      time: "12월 11일"
+    },
+    {
+      contentTitle: "제출 서류 관련 공지",
+      time: "12월 07일"
+    }
+  ],
+  [
+    {
+      contentTitle: "최종출결 및 ACA자격증 제안",
+      time: "12월 11일"
+    },
+    {
+      contentTitle: "제출 서류 관련 공지",
+      time: "12월 07일"
+    }
+  ],
+  [
+    {
+      contentTitle: "최종출결 및 ACA자격증 제안",
+      time: "12월 11일"
+    },
+    {
+      contentTitle: "제출 서류 관련 공지",
+      time: "12월 07일"
+    }
+  ],
+  [
+    {
+      contentTitle: "최종출결 및 ACA자격증 제안",
+      time: "12월 11일"
+    },
+    {
+      contentTitle: "제출 서류 관련 공지",
+      time: "12월 07일"
+    }
+  ]
+];
+
+export const YscecInfo: YscecRowProps[] = [
+  {
+    id: 11111,
+    className: "콘텐츠라이팅",
+    details: YscecInfoDetail[0]
+  },
+  {
+    id: 11112,
+    className: "대중음악의이해",
+    details: YscecInfoDetail[1]
+  },
+  {
+    id: 11113,
+    className: "알고리즘분석",
+    details: YscecInfoDetail[2]
+  },
+  {
+    id: 11114,
+    className: "선형대수와그응용",
+    details: YscecInfoDetail[3]
+  },
+  {
+    id: 11115,
+    className: "공학회계",
+    details: YscecInfoDetail[4]
+  }
+];
+
+export const contents: BoardContentProps[] = [
+    { title: "프문예 다들 공부하시나요?", time: "1시간전" },
+    { title: "토플 유효기간", time: "1시간전" },
+    { title: "아이패드 관련해서여...", time: "2시간전" },
+    { title: "새터 오티 질문입니다!", time: "3시간전" }
+  ];

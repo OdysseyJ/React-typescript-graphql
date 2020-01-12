@@ -6,13 +6,9 @@ const useStyles = makeStyles((theme: Theme) => ({
   root: {
     width: "100%",
     padding: theme.spacing(2),
-    marginTop: theme.spacing(2)
-  },
-  "@media (max-width: 1100px)": {
-    root: {
-      width: 350,
-      margin: theme.spacing(1)
-    }
+    marginTop: theme.spacing(2),
+    justifyContent: "center",
+    alignItems: "center"
   }
 }));
 

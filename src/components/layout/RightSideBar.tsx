@@ -7,8 +7,11 @@ import RightFooter from "../sidebar/rightfooter/RightFooter";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     rightsidebar: {
+      padding: 5,
       width: 350,
-      padding: 5
+      [theme.breakpoints.down("sm")]: {
+        display: "none"
+      }
     }
   })
 );

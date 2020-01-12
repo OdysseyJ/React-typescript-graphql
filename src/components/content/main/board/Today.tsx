@@ -15,10 +15,10 @@ const useStyles = makeStyles((theme: Theme) =>
       display: "none",
       alignItems: "center",
       justifyContent: "center",
-      width: 350,
-      margin: theme.spacing(2),
-      marginTop: theme.spacing(0),
-      marginBottom: theme.spacing(0)
+      width: "100%",
+      [theme.breakpoints.down("sm")]: {
+        display: "flex"
+      }
     },
     div: {
       display: "inline-block"
@@ -26,11 +26,6 @@ const useStyles = makeStyles((theme: Theme) =>
     colordiv: {
       display: "inline-block",
       color: oc.blue[6]
-    },
-    "@media (max-width: 700px)": {
-      paper: {
-        display: "flex"
-      }
     }
   })
 );
