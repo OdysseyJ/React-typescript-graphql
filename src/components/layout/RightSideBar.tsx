@@ -6,27 +6,17 @@ import RightFooter from "../sidebar/rightfooter/RightFooter";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    sidebar: {
-      alignItems: "center",
+    rightsidebar: {
       width: 350,
-      display: "flex",
-      flexDirection: "column",
-      minHeight: "100vh",
-      paddingTop: 70
-    },
-    "@media (max-width: 700px)": {
-      sidebar: {
-        width: 400,
-        paddingTop: 0
-      }
+      padding: 5
     }
   })
 );
 
-const Home = () => {
+const RightSideBar = () => {
   const classes = useStyles();
   return (
-    <div className={classes.sidebar}>
+    <div className={classes.rightsidebar}>
       <Today></Today>
       <NoticeList></NoticeList>
       <RightFooter></RightFooter>
@@ -34,4 +24,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default RightSideBar;

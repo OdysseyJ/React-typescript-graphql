@@ -23,12 +23,6 @@ const useStyles = makeStyles((theme: Theme) => ({
     fontSize: 12
   },
   listItem: { padding: 0, justifyContent: "center" },
-  writeButtonList: { display: "flex", justifyContent: "flex-end" },
-  writeButton: {
-    alignItems: "right",
-    backgroundColor: oc.blue[4],
-    color: "white"
-  },
   "@media (max-width: 1100px)": {}
 }));
 
@@ -80,9 +74,6 @@ const ScrollBoardTitle = ({
       </ListItem>
       <ListItem className={classes.listItem}>
         <Button>닉네임 새로고침</Button>
-      </ListItem>
-      <ListItem className={classes.writeButtonList}>
-        <Button className={classes.writeButton}>글쓰기</Button>
       </ListItem>
     </>
   );

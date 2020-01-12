@@ -1,89 +1,19 @@
 import React from "react";
 import { makeStyles, Theme } from "@material-ui/core/styles";
-import { Paper, List, Divider, Button, Link } from "@material-ui/core";
+import {
+  Paper,
+  List,
+  Divider,
+  Button,
+  Link,
+  ListItem
+} from "@material-ui/core";
 import { useRouteMatch } from "react-router-dom";
 import ScrollBoardRow, { ScrollBoardRowProps } from "./ScrollBoardRow";
 import ScrollBoardTitle from "./ScrollBoardTitle";
-
-const boardInfo: ScrollBoardRowProps[] = [
-  {
-    id: 1234,
-    boardName: "noname",
-    title: "생일인데 옆집 싸우고있어서 축하 못받음ㅠㅠ",
-    date: "01월 03일 오후 4:20",
-    nickname: "국가주의적인 딱정벌레",
-    hasImage: true,
-    like: 4,
-    unlike: 2,
-    comment: 6
-  },
-  {
-    id: 1235,
-    boardName: "noname",
-    title: "생일인데 옆집 싸우고있어서 축하 못받음ㅠㅠ",
-    date: "01월 03일 오후 4:20",
-    nickname: "국가주의적인 딱정벌레",
-    hasImage: false,
-    like: 4,
-    unlike: 2,
-    comment: 6
-  },
-  {
-    id: 1236,
-    boardName: "noname",
-    title: "생일인데 옆집 싸우고있어서 축하 못받음ㅠㅠ",
-    date: "01월 03일 오후 4:20",
-    nickname: "국가주의적인 딱정벌레",
-    hasImage: true,
-    like: 4,
-    unlike: 2,
-    comment: 6
-  },
-  {
-    id: 1237,
-    boardName: "noname",
-    title: "생일인데 옆집 싸우고있어서 축하 못받음ㅠㅠ",
-    date: "01월 03일 오후 4:20",
-    nickname: "국가주의적인 딱정벌레",
-    hasImage: false,
-    like: 4,
-    unlike: 2,
-    comment: 6
-  },
-  {
-    id: 1238,
-    boardName: "noname",
-    title: "생일인데 옆집 싸우고있어서 축하 못받음ㅠㅠ",
-    date: "01월 03일 오후 4:20",
-    nickname: "국가주의적인 딱정벌레",
-    hasImage: true,
-    like: 4,
-    unlike: 2,
-    comment: 6
-  },
-  {
-    id: 1239,
-    boardName: "noname",
-    title: "생일인데 옆집 싸우고있어서 축하 못받음ㅠㅠ",
-    date: "01월 03일 오후 4:20",
-    nickname: "국가주의적인 딱정벌레",
-    hasImage: false,
-    like: 4,
-    unlike: 2,
-    comment: 6
-  },
-  {
-    id: 1240,
-    boardName: "noname",
-    title: "생일인데 옆집 싸우고있어서 축하 못받음ㅠㅠ",
-    date: "01월 03일 오후 4:20",
-    nickname: "국가주의적인 딱정벌레",
-    hasImage: true,
-    like: 4,
-    unlike: 2,
-    comment: 6
-  }
-];
+import CustomLink from "../../common/CustomLink";
+import oc from "open-color";
+import { scrollBoardInfo } from "../../common/DataCenter";
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
@@ -123,6 +53,12 @@ const useStyles = makeStyles((theme: Theme) => ({
     color: "gray",
     fontSize: 12
   },
+  writeButtonList: { display: "flex", justifyContent: "flex-end" },
+  writeButton: {
+    alignItems: "right",
+    backgroundColor: oc.blue[4],
+    color: "white"
+  },
   "@media (max-width: 1100px)": {
     root: {
       width: 350,
@@ -137,6 +73,7 @@ export default function ScrollBoard() {
   let { url } = useRouteMatch();
 
   const pathname = url.split("/")[3];
+  console.log(url);
   return (
     <Paper elevation={3} className={classes.root}>
       <Link href="/home" style={{ textDecoration: "none" }}>
@@ -147,8 +84,13 @@ export default function ScrollBoard() {
           path={pathname}
           currentRandomNickname={"현세적인 흰조개"}
         ></ScrollBoardTitle>
+        <ListItem className={classes.writeButtonList}>
+          <CustomLink path={`${url}/write`}>
+            <Button className={classes.writeButton}>글쓰기</Button>
+          </CustomLink>
+        </ListItem>
         <Divider></Divider>
-        {boardInfo.map((info: ScrollBoardRowProps) => {
+        {scrollBoardInfo.map((info: ScrollBoardRowProps) => {
           return (
             <div>
               <ScrollBoardRow

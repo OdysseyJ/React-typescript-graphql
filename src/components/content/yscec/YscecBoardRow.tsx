@@ -2,6 +2,8 @@ import React from "react";
 import { ListItem, makeStyles, Theme, Grid } from "@material-ui/core";
 import ClampLines from "react-clamp-lines";
 import oc from "open-color";
+import CustomLink from "../../common/CustomLink";
+import { useParams } from "react-router-dom";
 
 const useStyles = makeStyles((theme: Theme) => ({
   button: {
@@ -38,35 +40,45 @@ const useStyles = makeStyles((theme: Theme) => ({
 }));
 
 export type YscecBoardRowProps = {
+  contentId: number;
   title: string;
   preview: string;
   date: string;
   file: boolean;
 };
 
-const YscecBoardRow = ({ title, preview, date, file }: YscecBoardRowProps) => {
+const YscecBoardRow = ({
+  contentId,
+  title,
+  preview,
+  date,
+  file
+}: YscecBoardRowProps) => {
   const classes = useStyles();
+  const { id } = useParams();
   return (
-    <ListItem button className={classes.button}>
-      <Grid container>
-        <Grid item xs={12}>
-          <div className={classes.title}>{title}</div>
+    <CustomLink path={`home/subject/${id}/${contentId}`}>
+      <ListItem button className={classes.button}>
+        <Grid container>
+          <Grid item xs={12}>
+            <div className={classes.title}>{title}</div>
+          </Grid>
+          <Grid item xs={12}>
+            <ClampLines
+              text={preview}
+              id={"yscecBoardRow"}
+              lines={2}
+              ellipsis="..."
+              buttons={false}
+              className={classes.preview}
+            ></ClampLines>
+          </Grid>
+          <Grid item xs={12}>
+            <div className={classes.date}>{date} YSCEC 도우미</div>
+          </Grid>
         </Grid>
-        <Grid item xs={12}>
-          <ClampLines
-            text={preview}
-            id={"yscecBoardRow"}
-            lines={2}
-            ellipsis="..."
-            buttons={false}
-            className={classes.preview}
-          ></ClampLines>
-        </Grid>
-        <Grid item xs={12}>
-          <div className={classes.date}>{date} YSCEC 도우미</div>
-        </Grid>
-      </Grid>
-    </ListItem>
+      </ListItem>
+    </CustomLink>
   );
 };
 

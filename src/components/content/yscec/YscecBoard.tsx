@@ -19,8 +19,7 @@ import oc from "open-color";
 import DescriptionIcon from "@material-ui/icons/Description";
 import { useRouteMatch } from "react-router-dom";
 import YscecBoardRow, { YscecBoardRowProps } from "./YscecBoardRow";
-import { ReviewBoardRowProps } from "./ReviewBoardRow";
-
+import { subjectInfo } from "../../common/DataCenter";
 import ReviewBoard from "./ReviewBoard";
 
 interface TabPanelProps {
@@ -151,72 +150,6 @@ const useStyles = makeStyles((theme: Theme) => ({
   }
 }));
 
-const yscecInfo: YscecBoardRowProps[] = [
-  {
-    title: "기말고사 일정",
-    preview:
-      "안녕하세요 대중 음악의 이해 조교 이혜원입니다. 기말고사 일정은 다음과 같습니다. 일시 12월 18일 (수) 3교시 (11:00~11:50) 장소 강의실 (교 101)",
-    date: "12월 15일",
-    file: true
-  },
-  {
-    title: "기말고사 일정",
-    preview:
-      "안녕하세요 대중 음악의 이해 조교 이혜원입니다. 기말고사 일정은 다음과 같습니다. 일시 12월 18일 (수) 3교시 (11:00~11:50) 장소 강의실 (교 10150) 장소 강의실 (교 10150) 장소 강의실 (교 10150) 장소 강의실 (교 10150) 장소 강의실 (교 10150) 장소 강의실 (교 101)",
-    date: "12월 15일",
-    file: false
-  },
-  {
-    title: "기말고사 일정",
-    preview:
-      "안녕하세요 대중 음악의 이해 조교 이혜원입니다. 기말고사 일정은 다음과 같습니다. 일시 12월 18일 (수) 3교시 (11:00~11:50) 장소 강의실 (교 101)",
-    date: "12월 15일",
-    file: false
-  }
-];
-
-const reviewInfo: ReviewBoardRowProps[] = [
-  {
-    id: 11112,
-    date: "2018-1 기말고사 후기",
-    grade: "A",
-    view: 147,
-    preview:
-      "기본적으로 빈칸 뚫린 피피티에 필기하는 방식으로 수업진행. 박애경 교수님 시간은 듣지 않아도 ppt에 다 나와 있지만 권현석 교수님 시간은 수업시간이 매우 중요하다. 양이 많지 않으니 개념 위주로 모두 외우면 되며 수업 중간 중간에 본인의 음악 장기를 보여준다면 가산점을 얻을 수 있다."
-  },
-  {
-    id: 11112,
-    date: "2018-1 기말고사 후기",
-    grade: "A",
-    view: 147,
-    preview:
-      "기본적으로 빈칸 뚫린 피피티에 필기하는 방식으로 수업진행. 박애경 교수님 시간은 듣지 않아도 ppt에 다 나와 있지만 권현석 교수님 시간은 수업시간이 매우 중요하다. 양이 많지 않으니 개념 위주로 모두 외우면 되며 수업 중간 중간에 본인의 음악 장기를 보여준다면 가산점을 얻을 수 있다."
-  },
-  {
-    id: 11112,
-    date: "2018-1 기말고사 후기",
-    grade: "A",
-    view: 147,
-    preview:
-      "기본적으로 빈칸 뚫린 피피티에 필기하는 방식으로 수업진행. 박애경 교수님 시간은 듣지 않아도 ppt에 다 나와 있지만 권현석 교수님 시간은 수업시간이 매우 중요하다. 양이 많지 않으니 개념 위주로 모두 외우면 되며 수업 중간 중간에 본인의 음악 장기를 보여준다면 가산점을 얻을 수 있다."
-  },
-  {
-    id: 11112,
-    date: "2018-1 기말고사 후기",
-    grade: "A",
-    view: 147,
-    preview:
-      "기본적으로 빈칸 뚫린 피피티에 필기하는 방식으로 수업진행. 박애경 교수님 시간은 듣지 않아도 ppt에 다 나와 있지만 권현석 교수님 시간은 수업시간이 매우 중요하다. 양이 많지 않으니 개념 위주로 모두 외우면 되며 수업 중간 중간에 본인의 음악 장기를 보여준다면 가산점을 얻을 수 있다."
-  }
-];
-
-const subjectInfo = {
-  subjectName: "대중음악의이해",
-  professorName: "박애경,권현석",
-  yscec: yscecInfo,
-  review: reviewInfo
-};
-
 export default function YscecBoard() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
@@ -261,6 +194,7 @@ export default function YscecBoard() {
             return (
               <>
                 <YscecBoardRow
+                  contentId={yscec.contentId}
                   title={yscec.title}
                   preview={yscec.preview}
                   date={yscec.date}

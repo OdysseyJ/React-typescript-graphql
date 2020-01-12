@@ -1,5 +1,6 @@
 import React from "react";
 import { ListItem, makeStyles, Theme, Grid } from "@material-ui/core";
+import CustomLink from "../../common/CustomLink";
 
 const useStyles = makeStyles((theme: Theme) => ({
   titleLeft: {
@@ -38,22 +39,24 @@ export type NoticeBoardRowProps = {
 const NoticeBoardRow = ({ index, title, date, time }: NoticeBoardRowProps) => {
   const classes = useStyles();
   return (
-    <ListItem button>
-      <Grid container className={classes.grid}>
-        <Grid item xs={1}>
-          <div className={classes.titleLeft}>{index}</div>
+    <CustomLink path={`home/notice/${index}`}>
+      <ListItem button>
+        <Grid container className={classes.grid}>
+          <Grid item xs={1}>
+            <div className={classes.titleLeft}>{index}</div>
+          </Grid>
+          <Grid item xs={7}>
+            <div className={classes.titleLeft}>{title}</div>
+          </Grid>
+          <Grid item xs={2}>
+            <div className={classes.titleRight}>{date}</div>
+          </Grid>
+          <Grid item xs={2}>
+            <div className={classes.titleRight}>{time}</div>
+          </Grid>
         </Grid>
-        <Grid item xs={7}>
-          <div className={classes.titleLeft}>{title}</div>
-        </Grid>
-        <Grid item xs={2}>
-          <div className={classes.titleRight}>{date}</div>
-        </Grid>
-        <Grid item xs={2}>
-          <div className={classes.titleRight}>{time}</div>
-        </Grid>
-      </Grid>
-    </ListItem>
+      </ListItem>
+    </CustomLink>
   );
 };
 

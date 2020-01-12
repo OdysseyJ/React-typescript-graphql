@@ -1,20 +1,20 @@
 import React from "react";
-import { Dashboard, Footer, Sidebar, Content } from "../components/layout";
+import {
+  Header,
+  Footer,
+  LeftSideBar,
+  RightSideBar,
+  Content
+} from "../components/layout";
 import { Grid } from "@material-ui/core";
 import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     rootHome: {
-      display: "flex"
-    },
-    grids: {
+      display: "flex",
+      paddingTop: 10,
       justifyContent: "center"
-    },
-    "@media (max-width: 700px)": {
-      grids: {
-        justifyContent: "left"
-      }
     }
   })
 );
@@ -24,12 +24,11 @@ const Home = () => {
 
   return (
     <div>
+      <Header></Header>
       <div className={classes.rootHome}>
-        <Dashboard></Dashboard>
-        <Grid container className={classes.grids}>
-          <Content></Content>
-          <Sidebar></Sidebar>
-        </Grid>
+        <LeftSideBar></LeftSideBar>
+        <Content></Content>
+        <RightSideBar></RightSideBar>
       </div>
       <Footer></Footer>
     </div>

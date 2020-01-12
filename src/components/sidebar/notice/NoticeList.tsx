@@ -3,9 +3,10 @@ import { createStyles, Theme, makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem, { ListItemProps } from "@material-ui/core/ListItem";
 import Divider from "@material-ui/core/Divider";
-import { Grid, Paper, ListSubheader, Link } from "@material-ui/core";
+import { Grid, Paper, ListSubheader } from "@material-ui/core";
 import NoticeRow from "./NoticeRow";
 import oc from "open-color";
+import CustomLink from "../../common/CustomLink";
 
 const posts = [
   "연세대 고등교육혁신원에서 알려드립니다.",
@@ -23,24 +24,26 @@ const posts = [
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     paper: {
-      alignItems: "center",
-      justifyContent: "center",
-      width: "88%",
-      margin: theme.spacing(2),
-      marginBottom: theme.spacing(0),
-      marginLeft: theme.spacing(0)
+      width: "auto",
+      margin: theme.spacing(1)
     },
     noticeheader: {
-      backgroundColor: oc.gray[2]
+      backgroundColor: oc.gray[1],
+      display: "flex",
+      alignItems: "center",
+      height: 30
     },
-    textcolor: {
-      color: "black"
+    headerText: {
+      color: "black",
+      flex: 1
     },
-    linktextcolor: {
-      color: "gray"
+    headerTextLink: {
+      color: "gray",
+      fontSize: 12
     },
     list: {
-      padding: 0
+      padding: 0,
+      width: "auto"
     },
     listfont: {
       fontSize: 8
@@ -69,16 +72,10 @@ export default function SimpleList() {
     <Paper elevation={3} className={classes.paper}>
       <List component="nav" className={classes.list}>
         <ListSubheader className={classes.noticeheader}>
-          <Grid container>
-            <Grid item xs={10} className={classes.textcolor}>
-              공지사항
-            </Grid>
-            <Grid item xs={2}>
-              <Link className={classes.linktextcolor} href={`/home/notice`}>
-                더보기>
-              </Link>
-            </Grid>
-          </Grid>
+          <div className={classes.headerText}>공지사항</div>
+          <CustomLink path={"home/notice"}>
+            <div className={classes.headerTextLink}>더보기 ></div>
+          </CustomLink>
         </ListSubheader>
         <Divider></Divider>
         <ListItem className={classes.titleListItem}>

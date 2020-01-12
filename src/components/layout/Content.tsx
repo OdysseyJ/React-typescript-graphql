@@ -9,8 +9,7 @@ const useStyles = makeStyles((theme: Theme) =>
       alignItems: "center",
       display: "flex",
       width: 850,
-      flexDirection: "column",
-      paddingTop: 70
+      flexDirection: "column"
     },
     "@media (max-width: 700px)": {
       contentin: {

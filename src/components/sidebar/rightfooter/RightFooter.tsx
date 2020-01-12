@@ -7,11 +7,8 @@ import { Route } from "react-router-dom";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     paper: {
-      alignItems: "center",
-      justifyContent: "center",
-      width: "88%",
-      margin: theme.spacing(2),
-      marginLeft: theme.spacing(0)
+      width: "auto",
+      margin: theme.spacing(1)
     },
     content: {
       margin: theme.spacing(1)

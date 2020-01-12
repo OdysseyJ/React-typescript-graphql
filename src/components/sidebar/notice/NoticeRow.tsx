@@ -1,5 +1,6 @@
 import React from "react";
 import { ListItem, makeStyles, Grid } from "@material-ui/core";
+import CustomLink from "../../common/CustomLink";
 
 const useStyles = makeStyles({
   text: {
@@ -29,15 +30,17 @@ export default function NoticeRow({ primary, index }: NoticeRowProps) {
   const classes = useStyles();
 
   return (
-    <ListItem button className={classes.listitem}>
-      <Grid container>
-        <Grid item xs={2}>
-          <div className={classes.listindex}>{index}</div>
+    <CustomLink path={`home/notice/${index}`}>
+      <ListItem button className={classes.listitem}>
+        <Grid container>
+          <Grid item xs={2}>
+            <div className={classes.listindex}>{index}</div>
+          </Grid>
+          <Grid item xs={10} className={classes.grid}>
+            <div className={classes.text}>{primary}</div>
+          </Grid>
         </Grid>
-        <Grid item xs={10} className={classes.grid}>
-          <div className={classes.text}>{primary}</div>
-        </Grid>
-      </Grid>
-    </ListItem>
+      </ListItem>
+    </CustomLink>
   );
 }
