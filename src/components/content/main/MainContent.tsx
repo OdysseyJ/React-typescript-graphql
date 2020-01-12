@@ -8,7 +8,7 @@ import InboxIcon from "@material-ui/icons/MoveToInbox";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     mainContainer: {
-      justifyContent: "center"
+      // display: "flex",
     },
     grid: {
       display: "flex",

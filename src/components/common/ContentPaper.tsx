@@ -6,9 +6,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   root: {
     width: "100%",
     padding: theme.spacing(2),
-    marginTop: theme.spacing(2),
-    justifyContent: "center",
-    alignItems: "center"
+    marginTop: theme.spacing(2)
   }
 }));
 

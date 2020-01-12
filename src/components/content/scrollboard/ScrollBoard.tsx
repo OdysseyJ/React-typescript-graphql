@@ -14,22 +14,11 @@ import ScrollBoardTitle from "./ScrollBoardTitle";
 import CustomLink from "../../common/CustomLink";
 import oc from "open-color";
 import { scrollBoardInfo } from "../../common/DataCenter";
+import ContentPaper from "../../common/ContentPaper";
 
 const useStyles = makeStyles((theme: Theme) => ({
-  root: {
-    flexGrow: 1,
-    width: 600,
-    margin: theme.spacing(3),
-    padding: theme.spacing(2)
-  },
   padding: {
     padding: theme.spacing(3)
-  },
-  demo1: {
-    backgroundColor: theme.palette.background.paper
-  },
-  demo2: {
-    backgroundColor: "#2e1534"
   },
   list: {
     padding: 0
@@ -75,7 +64,7 @@ export default function ScrollBoard() {
   const pathname = url.split("/")[3];
   console.log(url);
   return (
-    <Paper elevation={3} className={classes.root}>
+    <ContentPaper>
       <Link href="/home" style={{ textDecoration: "none" }}>
         <Button className={classes.backButton}>{"< 홈으로"}</Button>
       </Link>
@@ -109,6 +98,6 @@ export default function ScrollBoard() {
           );
         })}
       </List>
-    </Paper>
+    </ContentPaper>
   );
 }

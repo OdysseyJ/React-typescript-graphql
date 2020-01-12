@@ -6,8 +6,8 @@ import ContentRouter from "../../routes/ContentRouter";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     contentin: {
-      justifyContent: "center",
-      display: "flex"
+      width: "100%",
+      justifyContent: "center"
     }
   })
 );

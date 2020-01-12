@@ -18,6 +18,7 @@ import Box from "@material-ui/core/Box";
 import oc from "open-color";
 import NoticeBoardRow, { NoticeBoardRowProps } from "./NoticeBoardRow";
 import { NoticeBoardInfo, DeveloperBoardInfo } from "../../common/DataCenter";
+import ContentPaper from "../../common/ContentPaper";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -85,11 +86,6 @@ const StyledTab = withStyles((theme: Theme) =>
 )((props: StyledTabProps) => <Tab disableRipple {...props} style={style} />);
 
 const useStyles = makeStyles((theme: Theme) => ({
-  root: {
-    flexGrow: 1,
-    width: 600,
-    margin: theme.spacing(3)
-  },
   padding: {
     padding: theme.spacing(3)
   },
@@ -138,7 +134,7 @@ export default function NoticeBoard() {
   };
 
   return (
-    <Paper elevation={3} className={classes.root}>
+    <ContentPaper>
       <Link href="/home" style={{ textDecoration: "none" }}>
         <Button className={classes.backButton}>{"< 홈으로"}</Button>
       </Link>
@@ -220,6 +216,6 @@ export default function NoticeBoard() {
           })}
         </List>
       </TabPanel>
-    </Paper>
+    </ContentPaper>
   );
 }

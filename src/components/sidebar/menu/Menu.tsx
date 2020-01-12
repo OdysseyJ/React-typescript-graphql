@@ -18,7 +18,7 @@ import ForumIcon from "@material-ui/icons/Forum";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     paper: {
-      width: "auto",
+      width: 300,
       margin: theme.spacing(1)
     },
     div: {

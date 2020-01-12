@@ -21,6 +21,7 @@ import { useRouteMatch } from "react-router-dom";
 import YscecBoardRow, { YscecBoardRowProps } from "./YscecBoardRow";
 import { subjectInfo } from "../../common/DataCenter";
 import ReviewBoard from "./ReviewBoard";
+import ContentPaper from "../../common/ContentPaper";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -88,11 +89,6 @@ const StyledTab = withStyles((theme: Theme) =>
 )((props: StyledTabProps) => <Tab disableRipple {...props} style={style} />);
 
 const useStyles = makeStyles((theme: Theme) => ({
-  root: {
-    flexGrow: 1,
-    width: 600,
-    margin: theme.spacing(3)
-  },
   padding: {
     padding: theme.spacing(3)
   },
@@ -165,7 +161,7 @@ export default function YscecBoard() {
   };
 
   return (
-    <Paper elevation={3} className={classes.root}>
+    <ContentPaper>
       <Link href="/home" style={{ textDecoration: "none" }}>
         <Button className={classes.backButton}>{"< 홈으로"}</Button>
       </Link>
@@ -224,6 +220,6 @@ export default function YscecBoard() {
           reviewInfo={subjectInfo.review}
         ></ReviewBoard>
       </TabPanel>
-    </Paper>
+    </ContentPaper>
   );
 }

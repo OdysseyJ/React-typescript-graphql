@@ -9,9 +9,10 @@ import Ad from "../sidebar/ad/Ad";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     leftsidebar: {
-      display: "absolute",
-      width: 350,
+      width: 340,
       padding: 5,
+      marginLeft: theme.spacing(26),
+      textAlign: "center",
       [theme.breakpoints.down("sm")]: {
         display: "none"
       }
@@ -25,7 +26,7 @@ const RightSideBar = () => {
     <div className={classes.leftsidebar}>
       <User username={"블루블루블루스"} feather={45}></User>
       <Menu></Menu>
-      <Ad></Ad>
+      {/* <Ad></Ad> */}
     </div>
   );
 };

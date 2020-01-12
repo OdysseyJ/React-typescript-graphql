@@ -8,7 +8,9 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     rightsidebar: {
       padding: 5,
-      width: 350,
+      width: 340,
+      marginRight: theme.spacing(26),
+      display: "inline-block",
       [theme.breakpoints.down("sm")]: {
         display: "none"
       }

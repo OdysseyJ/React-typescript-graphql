@@ -5,7 +5,7 @@ import { Paper, List, ListItem, ListItemAvatar } from "@material-ui/core";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     paper: {
-      width: "auto",
+      width: 300,
       margin: theme.spacing(1)
     },
     div: {
