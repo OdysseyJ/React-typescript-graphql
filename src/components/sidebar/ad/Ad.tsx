@@ -5,16 +5,15 @@ import { Paper, List, ListItem, ListItemAvatar } from "@material-ui/core";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     div: {
-      verticalAlign: "center",
-      alignContent: "center",
+      display: "flex",
+      justifyContent: "center",
       width: "100%",
-      backgroundImage: "/images/ads/den/img_1.jpg",
-      backgroundRepeat: "no-repeat",
-      backgroundColor: "white",
-      backgroundPosition: "center"
+      height: 100,
+      padding: 10
     },
     image: {
-      width: "auto"
+      width: "100%",
+      height: 300
     }
   })
 );
@@ -24,7 +23,7 @@ const Ad = () => {
 
   return (
     <div className={classes.div}>
-      {/* <img src={"/images/ads/den/img_1.jpg"} className={classes.image}></img> */}
+      <img src={"/images/ads/den/img_1.jpg"} className={classes.image}></img>
     </div>
   );
 };
