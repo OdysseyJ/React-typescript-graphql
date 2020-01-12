@@ -5,13 +5,10 @@ import { useHistory } from "react-router-dom";
 import NickName from "./NickName";
 import LikeButton from "./LikeButton";
 import oc from "open-color";
+import ContentPaper from "../../common/ContentPaper";
+import BackButton from "../../common/BackButton";
 
 const useStyles = makeStyles((theme: Theme) => ({
-  root: {
-    width: 600,
-    margin: theme.spacing(3),
-    padding: theme.spacing(2)
-  },
   list: {
     padding: 0
   },
@@ -62,10 +59,8 @@ export default function ScrollBoardDetail() {
   const history = useHistory();
 
   return (
-    <Paper elevation={3} className={classes.root}>
-      <Button className={classes.backButton} onClick={() => history.goBack()}>
-        {"< 돌아가기"}
-      </Button>
+    <ContentPaper>
+      <BackButton></BackButton>
       <div className={classes.title}>조기 졸업?</div>
       <NickName></NickName>
       <div className={classes.content}>
@@ -78,6 +73,6 @@ export default function ScrollBoardDetail() {
       </div>
       <div className={classes.view}>113명이 읽었어요</div>
       <List component="nav" className={classes.list}></List>
-    </Paper>
+    </ContentPaper>
   );
 }

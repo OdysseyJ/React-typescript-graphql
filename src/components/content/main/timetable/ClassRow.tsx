@@ -10,7 +10,9 @@ import {
   IconButton,
   Divider
 } from "@material-ui/core";
-import PhotoCamera from "@material-ui/icons/PhotoCamera";
+import VisibilityIcon from "@material-ui/icons/Visibility";
+import CreateIcon from "@material-ui/icons/Create";
+import AlarmIcon from "@material-ui/icons/Alarm";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -66,17 +68,17 @@ const ClassRow = ({ className, professorName }: ClassRowProps) => {
           </Grid>
           <Grid xs={2} item className={classes.grid}>
             <IconButton>
-              <PhotoCamera></PhotoCamera>
+              <VisibilityIcon></VisibilityIcon>
             </IconButton>
           </Grid>
           <Grid xs={2} item className={classes.grid}>
             <IconButton>
-              <PhotoCamera></PhotoCamera>
+              <CreateIcon></CreateIcon>
             </IconButton>
           </Grid>
           <Grid xs={2} item className={classes.grid}>
             <IconButton>
-              <PhotoCamera></PhotoCamera>
+              <AlarmIcon></AlarmIcon>
             </IconButton>
           </Grid>
         </Grid>

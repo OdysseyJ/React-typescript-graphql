@@ -6,6 +6,7 @@ import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import MenuIcon from "@material-ui/icons/Menu";
 import oc from "open-color";
+import CustomLink from "../common/CustomLink";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -59,9 +60,13 @@ export default function PrimarySearchAppBar() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography className={classes.title} variant="h6" noWrap>
-            YONPLE
-          </Typography>
+          <div className={classes.title}>
+            <CustomLink path="home">
+              <Typography className={classes.title} variant="h6" noWrap>
+                YONPLE
+              </Typography>
+            </CustomLink>
+          </div>
         </Toolbar>
       </AppBar>
     </div>

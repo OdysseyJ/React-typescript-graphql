@@ -6,8 +6,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   container: {
     display: "flex",
     width: "100%",
-    justifyContent: "left",
-    marginTop: 30
+    justifyContent: "left"
   },
   backButton: {
     color: "gray",
