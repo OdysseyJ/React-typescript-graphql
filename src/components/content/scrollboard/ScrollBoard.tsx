@@ -62,7 +62,6 @@ export default function ScrollBoard() {
   let { url } = useRouteMatch();
 
   const pathname = url.split("/")[3];
-  console.log(url);
   return (
     <ContentPaper>
       <Link href="/home" style={{ textDecoration: "none" }}>
@@ -74,7 +73,7 @@ export default function ScrollBoard() {
           currentRandomNickname={"현세적인 흰조개"}
         ></ScrollBoardTitle>
         <ListItem className={classes.writeButtonList}>
-          <CustomLink path={`${url}/write`}>
+          <CustomLink path={`${url.substring(1, url.length)}/write`}>
             <Button className={classes.writeButton}>글쓰기</Button>
           </CustomLink>
         </ListItem>

@@ -2,10 +2,12 @@ import React from "react";
 import ContentPaper from "../../common/ContentPaper";
 import YscecBoardDetailTitle from "./YscecBoardDetailTitle";
 import YscecBoardDetailContent from "./YscecBoardDetailContent";
+import BackButton from "../../common/BackButton";
 
 const YscecBoardDetail = () => {
   return (
     <ContentPaper>
+      <BackButton></BackButton>
       <YscecBoardDetailTitle
         date={"12월 11일"}
         title={"최종출결 및 ACA자격증 제출자 명단(수정)"}
