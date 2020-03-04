@@ -8,7 +8,7 @@ type MenuItemRowProps = {
 const MenuItemRow = ({ title }: MenuItemRowProps) => {
   return (
     <ListItem button>
-      <ListItemAvatar></ListItemAvatar>
+      {/* <ListItemAvatar></ListItemAvatar> */}
       <div>{title}</div>
     </ListItem>
   );

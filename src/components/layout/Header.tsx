@@ -63,7 +63,7 @@ export default function PrimarySearchAppBar() {
           <div className={classes.title}>
             <CustomLink path="home">
               <Typography className={classes.title} variant="h6" noWrap>
-                YONPLE
+                헤더어어
               </Typography>
             </CustomLink>
           </div>

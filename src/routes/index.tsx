@@ -6,8 +6,8 @@ const Root = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/home" component={Home}></Route>
         <Route path="/auth" component={Auth}></Route>
+        <Route path="/" component={Home}></Route>
         {/* <Redirect path="*" to="/auth"></Redirect> */}
       </Switch>
     </BrowserRouter>

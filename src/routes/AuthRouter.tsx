@@ -1,12 +1,12 @@
 import * as React from "react";
-import { Route, Switch, useRouteMatch, Redirect } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import { Join, Find } from "../pages";
-import AuthForm from "../components/auth/AuthForm";
+import AuthMain from "../containers/auth/AuthMain";
 
 const AuthRouter = () => {
   return (
     <Switch>
-      <Route exact path="/auth" component={AuthForm}></Route>
+      <Route exact path="/auth" component={AuthMain}></Route>
       <Route path="/auth/join" component={Join}></Route>
       <Route path="/auth/find" component={Find}></Route>
       <Redirect path="*" to="/auth"></Redirect>

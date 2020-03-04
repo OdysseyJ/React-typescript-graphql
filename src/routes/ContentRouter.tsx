@@ -13,8 +13,8 @@ const ContentRouter = () => {
   let { path } = useRouteMatch();
   return (
     <Switch>
-      <Route path={path} exact component={MainContent}></Route>
-      <Route path={`${path}/notice`} exact component={NoticeBoard}></Route>
+      <Route exact path={path} component={MainContent}></Route>
+      <Route exact path={`${path}/notice`} component={NoticeBoard}></Route>
       <Route
         path={`${path}/notice/:number`}
         exact
