@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import AuthForm from "../../components/auth/AuthForm";
-// import { useMutation } from "@apollo/react-hooks";
-// import { LOGIN } from "../queries/AuthQueries";
-import { useHistory } from "react-router-dom";
+import { LOGIN_USER } from "../../queries/AuthQueries";
 import { makeStyles } from "@material-ui/styles";
 import AuthImage from "../../components/auth/AuthImage";
+import { useLazyQuery } from "@apollo/react-hooks";
+import useAlert from "../../hooks/useAlert";
+import { useHistory } from "react-router";
 
 const useStyles = makeStyles((theme?: any) => ({
   root: {
@@ -19,18 +20,46 @@ const useStyles = makeStyles((theme?: any) => ({
 const AuthMain = () => {
   const classes = useStyles();
 
-  let history = useHistory();
-  //   const [login] = useMutation(LOGIN, {
-  //     onCompleted({ login }) {
-  //       localStorage.setItem("token", login.token as string);
-  //       history.push("/");
-  //     }
-  //   });
+  const history = useHistory();
+  const showAlert = useAlert("로그인 정보가 올바르지 않습니다.");
+
+  const [loginUser] = useLazyQuery(LOGIN_USER, {
+    onCompleted: (data: any) => {
+      console.log(data);
+      history.push("/");
+    },
+    onError: (error: any) => {
+      showAlert();
+    }
+  });
+
+  const [state, setState] = useState({
+    email: "",
+    password: ""
+  });
+
+  const handleChange = (event: any) => {
+    setState({
+      ...state,
+      [event.target.name]: event.target.value
+    });
+  };
+
+  const handleLoginClick = (e: any) => {
+    e.preventDefault();
+    loginUser({
+      variables: { email: state.email, password: state.password }
+    });
+  };
+
   return (
     <div className={classes.root}>
       <AuthImage></AuthImage>
-      <AuthForm></AuthForm>
-      {/* <AuthForm login={login}></AuthForm> */}
+      <AuthForm
+        state={state}
+        handleChange={handleChange}
+        handleLoginClick={handleLoginClick}
+      ></AuthForm>
     </div>
   );
 };

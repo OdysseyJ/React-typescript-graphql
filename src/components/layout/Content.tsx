@@ -1,24 +1,39 @@
 import React from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import { createStyles, Theme, makeStyles } from "@material-ui/core/styles";
+import { Theme, makeStyles } from "@material-ui/core/styles";
 import ContentRouter from "../../routes/ContentRouter";
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    contentin: {
-      width: "100%",
-      justifyContent: "center"
+const useStyles = makeStyles((theme: Theme) => ({
+  fixedContentSpace: {
+    width: 1300,
+    display: "flex",
+    margin: "0 auto",
+    justifyContent: "center",
+    zIndex: 50,
+    position: "relative"
+  },
+  innerContentSpace: { width: 780, padding: 10, zIndex: 99 },
+  "@media (max-width: 1024px)": {
+    innerContentSpace: {
+      width: "100%"
     }
-  })
-);
+  },
+  "@media (max-width: 1300px)": {
+    fixedContentSpace: {
+      width: "auto"
+    }
+  }
+}));
 
 export default function Content() {
   const classes = useStyles();
 
   return (
-    <div className={classes.contentin}>
+    <div className={classes.fixedContentSpace}>
       <CssBaseline />
-      <ContentRouter></ContentRouter>
+      <div className={classes.innerContentSpace}>
+        <ContentRouter></ContentRouter>
+      </div>
     </div>
   );
 }

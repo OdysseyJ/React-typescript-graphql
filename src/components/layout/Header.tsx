@@ -7,6 +7,7 @@ import Typography from "@material-ui/core/Typography";
 import MenuIcon from "@material-ui/icons/Menu";
 import oc from "open-color";
 import CustomLink from "../common/CustomLink";
+import SnackbarAlert from "../common/SnackbarAlert";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -68,6 +69,7 @@ export default function PrimarySearchAppBar() {
             </CustomLink>
           </div>
         </Toolbar>
+        <SnackbarAlert></SnackbarAlert>
       </AppBar>
     </div>
   );

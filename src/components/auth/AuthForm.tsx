@@ -1,20 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
-import Link from "@material-ui/core/Link";
-import Box from "@material-ui/core/Box";
-import Grid from "@material-ui/core/Grid";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import oc from "open-color";
-import Copyright from "../common/Copyright";
-// import { LoginInput } from "../../queries/AuthQueries";
-import { ApolloError } from "apollo-client";
-// import { apolloErrorMessageParser } from "../../apollo/apolloErrorMessageParser";
-import { useApolloClient } from "@apollo/react-hooks";
-// import { setAlert } from "../common/setAlert";
+import CustomLink from "../common/CustomLink";
 
 const useStyles = makeStyles((theme?: any) => ({
   paper: {
@@ -46,26 +38,14 @@ const useStyles = makeStyles((theme?: any) => ({
   }
 }));
 
-export default function AuthForm(props: any) {
+type AuthFormProps = {
+  handleLoginClick: any;
+  state: any;
+  handleChange: any;
+};
+
+const AuthForm = ({ handleLoginClick, state, handleChange }: AuthFormProps) => {
   const classes = useStyles();
-  const client = useApolloClient();
-  const [state, setState] = useState({
-    email: "",
-    password: ""
-  });
-
-  const handleChange = (event: any) => {
-    setState({
-      ...state,
-      [event.target.name]: event.target.value
-    });
-  };
-
-  //for Graphql
-  // const loginData: LoginInput = {
-  //   email: state.email,
-  //   password: state.password
-  // };
 
   return (
     <div className={classes.paper}>
@@ -106,29 +86,21 @@ export default function AuthForm(props: any) {
           variant="contained"
           color="primary"
           className={classes.submit}
-          onClick={(e: any) => {
-            e.preventDefault();
-            // props
-            //   .login({
-            //     variables: { data: loginData }
-            //   })
-            //   .catch((err: ApolloError) => {
-            //     // const message = apolloErrorMessageParser(err);
-            //     // setAlert(client, message);
-            //   });
-          }}
+          onClick={handleLoginClick}
         >
           로그인
         </Button>
         <div className={classes.joinWrapper}>
-          <Link href="auth/find" variant="body2">
-            로그인 정보를 잊으셨나요?
-          </Link>
-          <Link href="auth/join" variant="body2">
-            {"회원가입"}
-          </Link>
+          <CustomLink path="auth/find">
+            <div style={{ color: "blue" }}>로그인 정보를 잊으셨나요?</div>
+          </CustomLink>
+          <CustomLink path="auth/join">
+            <div style={{ color: "blue" }}>회원가입</div>
+          </CustomLink>
         </div>
       </form>
     </div>
   );
-}
+};
+
+export default AuthForm;
